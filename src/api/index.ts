@@ -1,4 +1,5 @@
 import express from "express";
+import log from "../utils/log";
 
 const app = express();
 
@@ -8,7 +9,7 @@ async function setupAPI(): Promise<void> {
   });
 
   app.listen(3000, () => {
-    console.log("listening");
+    log.info("listening");
   });
 }
 

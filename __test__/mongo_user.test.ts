@@ -1,7 +1,7 @@
 import setupMongo from "../src/database/setup";
 import { UserModel } from "../src/database/model";
 
-describe("MongoDb", () => {
+describe("MongoDB User table", () => {
   beforeAll(async () => {
     await setupMongo("test_chat");
     await UserModel.deleteMany();
@@ -12,7 +12,7 @@ describe("MongoDb", () => {
       createdDate: new Date(),
       name: "Eduardo",
     }).save();
-    console.log(data);
+    expect(data?.name).toBe("Eduardo");
   });
 
   it("get user", async () => {
