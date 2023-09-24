@@ -9,5 +9,8 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["src/**/*", "./.eslintrc.js"]
+  "include": ["src/**/*", "./.eslintrc.js"],
+  "rules": {
+    "@typescript-eslint/strict-boolean-expressions": "off"
+  }
 }
