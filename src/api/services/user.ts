@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import log from "../../utils/log";
 import { UserModel } from "../../database/model";
 import { type Express } from "express";

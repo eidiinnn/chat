@@ -19,7 +19,6 @@ const log = {
 
   _showLog(level: LogLevel, msg: string, data: any) {
     console.log(`${new Date().toISOString()} [${level}] ${msg}`);
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     if (data) console.log(data);
   },
 };
