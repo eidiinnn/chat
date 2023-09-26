@@ -2,10 +2,11 @@ import setupAPI from "../src/api/setup";
 import { UserModel, MessageModel } from "../src/database/model";
 import setupMongo from "../src/database/setup";
 import request from "supertest";
+import 'dotenv/config'
 
 
 describe("API Endpoint", () => {
-  const host = "localhost:3000"
+  const host = `localhost:${process.env.SERVER_PORT}`
   beforeAll(async () => {
     await setupMongo("test_chat");
     await setupAPI();
