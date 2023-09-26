@@ -12,7 +12,7 @@ const setupAPI = async (): Promise<Express> => {
       req.send("hello world");
     });
     setupUserApi(app);
-    void setupMessageAPI(app);
+    setupMessageAPI(app);
 
     app.listen(3000, () => {
       log.info("listening");
