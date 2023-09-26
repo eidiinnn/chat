@@ -1,4 +1,4 @@
-import setupAPI from "./api/index";
+import setupAPI from "./api/setup";
 import setupMongo from "./database/setup";
 
 async function setup(): Promise<void> {

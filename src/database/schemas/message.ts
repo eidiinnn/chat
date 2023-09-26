@@ -1,11 +1,11 @@
 import { Schema } from "mongoose";
 import genUUID from "../../utils/genUUID";
 
-const userSchema = new Schema({
+const messageSchema = new Schema({
   _id: { type: String, default: genUUID },
-  token: {type: String, default: genUUID},
-  name: String,
+  user: String,
+  message: String,
   createdDate: Date,
 });
 
-export default userSchema;
+export default messageSchema;

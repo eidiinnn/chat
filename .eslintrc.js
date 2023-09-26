@@ -4,7 +4,11 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ["standard-with-typescript", "eslint:recommended", "prettier"],
+  extends: [
+    "standard-with-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+  ],
   plugins: ["jest"],
   overrides: [
     {
