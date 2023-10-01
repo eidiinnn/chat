@@ -2,7 +2,7 @@ import log from "../utils/log";
 import mongoose from "mongoose";
 
 export default async function setupMongo(
-  database?: string
+  database?: string,
 ): Promise<typeof mongoose> {
   try {
     log.info("connecting to mongo");
@@ -10,7 +10,7 @@ export default async function setupMongo(
       `mongodb://127.0.0.1:27017/${database ?? "chat"}`,
       {
         connectTimeoutMS: 5000,
-      }
+      },
     );
     log.info("mongo connected");
     return mongo;

@@ -9,7 +9,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "prettier",
   ],
-  plugins: ["jest"],
+  plugins: ["jest", "prettier"],
   overrides: [
     {
       files: ["./__test__/**"],
@@ -28,5 +28,6 @@ module.exports = {
   },
   rules: {
     "@typescript-eslint/strict-boolean-expressions": "off",
+    "prettier/prettier": ["warn", { "endOfLine": "auto" }]
   },
 };
