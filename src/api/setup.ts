@@ -18,8 +18,7 @@ const setupAPI = async (): Promise<Express> => {
       req.send("hello world");
     });
     setupUserApi(app);
-    setupMessageAPI(app);
-    setupChatSocket(io);
+    setupMessageAPI(app, io);
 
     httpServer.listen(process.env.SERVER_PORT, () => {
       log.info(`listening on port: ${process.env.SERVER_PORT}`);

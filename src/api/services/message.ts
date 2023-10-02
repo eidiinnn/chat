@@ -1,7 +1,8 @@
 import { UserModel, MessageModel } from "../../database/model";
 import { type Express } from "express";
+import { type Server } from "socket.io";
 
-function setupMessageAPI(app: Express): void {
+function setupMessageAPI(app: Express, io: Server): void {
   app.post("/message", (req, res) => {
     const { token, message } = req.body;
     void UserModel.findOne({ token })
@@ -20,5 +21,10 @@ function setupMessageAPI(app: Express): void {
         }
       });
   });
+
+  MessageModel.addListener("save", (message) => {
+    io.emit("message", message);
+  });
+
 }
 export default setupMessageAPI;
