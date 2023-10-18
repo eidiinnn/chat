@@ -5,7 +5,6 @@ import setupMessageAPI from "./services/message";
 import "dotenv/config";
 import http from "http";
 import Socket from "socket.io";
-import setupChatSocket from "./services/chat";
 
 const app = express();
 app.use(express.json());
@@ -17,6 +16,7 @@ const setupAPI = async (): Promise<Express> => {
     app.get("/", (_, req) => {
       req.send("hello world");
     });
+
     setupUserApi(app);
     setupMessageAPI(app, io);
 
