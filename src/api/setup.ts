@@ -17,6 +17,10 @@ const setupAPI = async (): Promise<Express> => {
       req.send("hello world");
     });
 
+    io.on("connection", (socket) => {
+      log.info(`${socket.id} connect to the socket.`);
+    });
+
     setupUserApi(app);
     setupMessageAPI(app, io);
 
